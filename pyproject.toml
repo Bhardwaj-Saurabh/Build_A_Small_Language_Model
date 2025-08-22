@@ -1,0 +1,15 @@
+[project]
+name = "build-a-small-language-model"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.5",
+    "notebook>=7.4.5",
+    "numpy>=2.3.2",
+    "pandas>=2.3.2",
+    "python-dotenv>=1.1.1",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+]
