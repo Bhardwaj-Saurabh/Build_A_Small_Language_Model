@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import numpy as np
 
 class MultiHeadAttention(nn.Module):
     """
@@ -378,10 +379,8 @@ class GPTModel(nn.Module):
 
         # Stack of Transformer blocks (pre-LN, causal MHA + FFN).
         # nn.Sequential executes them in order.
-        self.transformer_blocks = nn.Sequential(
-            *[TransformerBlock(cfg) for _ in range(cfg['n_layers'])]
-        )
-
+        self.transformer_blocks = nn.Sequential(*[TransformerBlock(cfg) for _ in range(cfg["n_layers"])])
+        
         # Final LayerNorm before projecting to logits (stabilizes activations).
         self.layernorm = LayerNorm(cfg['emb_dim'])
 
@@ -424,3 +423,4 @@ class GPTModel(nn.Module):
         logits = self.lm_head(x)  # (B, T, vocab_size)
 
         return logits
+    
