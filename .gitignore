@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# data
+preprocess_data
+tinystories_dataset
+
 # Distribution / packaging
 .Python
 build/
